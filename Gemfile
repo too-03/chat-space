@@ -52,5 +52,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#いずれの環境でも利用可能
+#hamlを導入
 gem 'haml-rails'
+
+#コマンド1つでhamlに変換可能なgem[erb2haml]を導入
+gem 'erb2haml'
