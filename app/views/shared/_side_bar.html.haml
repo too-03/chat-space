@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__user-name
+    .top-items
+      .top-items__name omi
+      %ul.top-items__icons
+        %li.top-items__icons__btn
+        = link_to '#', class: "icon" do
+          = icon('fas', 'edit', class: "btn")
+        %li.top-items__icons__btn
+        = link_to '#', class: "icon" do
+          = icon('fas', 'cog', class: "btn")
+  .side-bar__group-list
+    .group
+      .group__name techcamp1
+      .group__latest-message non-message1
+    .group
+      .group__name techcamp2
+      .group__latest-message non-message2
+    .group
+      .group__name techcamp3
+      .group__latest-message non-message3

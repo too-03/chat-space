@@ -1,0 +1,31 @@
+.chat-main
+  .chat-main__group-info
+    .left-box
+      .left-box__group-name techcamp1
+      .left-box__member-list Member: omi rui
+    .right-box
+      = link_to 'Edit', '#', class: "edit-btn"
+  .chat-main__message-list
+    .chat-group
+      .chat-group__info
+        .chat-group__info__contributor omi
+        .chat-group__info__time-stamp 2020/02/02(Sun) 12:12:12
+      .chat-group__message ありがとう！
+    .chat-group
+      .chat-group__info
+        .chat-group__info__contributor rui
+        .chat-group__info__time-stamp 2020/02/02(Sun) 12:20:20
+      .chat-group__message OK!
+    .chat-group
+      .chat-group__info
+        .chat-group__info__contributor omi
+        .chat-group__info__time-stamp 2020/02/02(Sun) 12:30:30
+      .chat-group__message 助かった！
+  .chat-main__message-form
+    %form.new-message
+      .input-box
+        %input{type: "text", class: "input-box__text",  placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('far', 'image', class: "input-box__image__btn")
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "send-btn", value: "Send"}
