@@ -57,3 +57,6 @@ gem 'haml-rails'
 
 #コマンド1つでhamlに変換可能なgem[erb2haml]を導入
 gem 'erb2haml'
+
+#FontAwesomeを導入
+gem 'font-awesome-sass'
