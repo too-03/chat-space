@@ -63,3 +63,5 @@ gem 'font-awesome-sass'
 
 #ユーザ管理機能の追加
 gem 'devise'
+
+gem 'pry-rails'
