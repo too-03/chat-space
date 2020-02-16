@@ -1,31 +1,26 @@
 .chat-main
   .chat-main__group-info
     .left-box
-      .left-box__group-name techcamp1
-      .left-box__member-list Member: omi rui
+      .left-box__group-name
+        = @group.name
+      .left-box__member-list
+        Member：
+        - @group.users.each do |user|
+          = user.name
+          -# groupの中に、複数のuserがいるのでeach文でだしている
+          -# message_controllerで取得した@groupからusersを取得
+          -# そこからuserのnameカラム情報を出力
+
     .right-box
-      = link_to 'Edit', '#', class: "edit-btn"
+      = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
   .chat-main__message-list
-    .chat-group
-      .chat-group__info
-        .chat-group__info__contributor omi
-        .chat-group__info__time-stamp 2020/02/02(Sun) 12:12:12
-      .chat-group__message ありがとう！
-    .chat-group
-      .chat-group__info
-        .chat-group__info__contributor rui
-        .chat-group__info__time-stamp 2020/02/02(Sun) 12:20:20
-      .chat-group__message OK!
-    .chat-group
-      .chat-group__info
-        .chat-group__info__contributor omi
-        .chat-group__info__time-stamp 2020/02/02(Sun) 12:30:30
-      .chat-group__message 助かった！
+    = render @messages
   .chat-main__message-form
-    %form.new-message
+    .new-message
       .input-box
-        %input{type: "text", class: "input-box__text",  placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('far', 'image', class: "input-box__image__btn")
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "send-btn", value: "Send"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :body, class: 'new_message__text', placeholder: 'type a message'
+          = f.label :image, class: 'new_message__image' do
+            = icon('far', 'image', class: 'new_message__image__btn')
+            = f.file_field :image, class: 'new_message__image__file'
+          = f.submit 'Send', class: 'send-btn'
