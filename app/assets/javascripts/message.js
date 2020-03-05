@@ -2,39 +2,39 @@ $(function(){
 
   var buildHTML = function(message){
     if (message.image) {
-      var html = `<div class="chat-group" data-message-id=` + message.id + `>` +
-                    `<div class="chat-group__info">` +
-                      `<div class="chat-group__info__contributor">` +
-                        message.user_name +
-                      `</div>` +
-                      `<div class="chat-group__info__time-stamp">` +
-                        message.create_at +
-                      `</div>` +
-                    `</div>` +
-                    `<div class="chat-group__message">` +
-                      `<p class="chat-group__message__body">` +
-                        message.body +
-                      `</p>` +
-                      `<img class="chat-group__message__image" src=${message.image}>` +
-                    `</div>` +
-                  `</div>`
+      var html = `<div class="chat-group" data-message-id=${message.id} >
+                    <div class="chat-group__info">
+                      <div class="chat-group__info__contributor">
+                        ${message.user_name}
+                      </div>
+                      <div class="chat-group__info__time-stamp">
+                        ${message.create_at}
+                      </div>
+                    </div>
+                    <div class="chat-group__message">
+                      <p class="chat-group__message__body">
+                        ${message.body}
+                      </p>
+                      <img class="chat-group__message__image" src=${message.image}>
+                    </div>
+                  </div>`
       return html;
     } else {
-      var html = `<div class="chat-group" data-message-id=` + message.id + `>` +
-                    `<div class="chat-group__info">` +
-                      `<div class="chat-group__info__contributor">` +
-                        message.user_name +
-                      `</div>` +
-                      `<div class="chat-group__info__time-stamp">` +
-                        message.create_at +
-                      `</div>` +
-                    `</div>` +
-                    `<div class="chat-group__message">` +
-                      `<p class="chat-group__message__body">` +
-                        message.body +
-                      `</p>` +
-                    `</div>` +
-                  `</div>`
+      var html = `<div class="chat-group" data-message-id=${message.id}>
+                    <div class="chat-group__info">
+                      <div class="chat-group__info__contributor">
+                        ${message.user_name}
+                      </div>
+                      <div class="chat-group__info__time-stamp">
+                        ${message.create_at}
+                      </div>
+                    </div>
+                    <div class="chat-group__message">
+                      <p class="chat-group__message__body">
+                        ${message.body}
+                      </p>
+                    </div>
+                  </div>`
       return html
     };
   }
